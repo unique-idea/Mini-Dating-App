@@ -1,0 +1,6 @@
+@Mini_Dating_App_HostAddress = http://localhost:5016
+
+GET {{Mini_Dating_App_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

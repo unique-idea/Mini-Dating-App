@@ -1,0 +1,822 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Mini_Dating_App\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App_BE.csproj|e:\\mini_dating_app\\mini_dating_app_be.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App_BE.csproj|solutionrelative:mini_dating_app_be.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\data\\minidatingappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:data\\minidatingappdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\controllers\\likeusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:controllers\\likeusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\jwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\ijwtservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\interfaces\\iuserlikeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\interfaces\\iuserlikeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\interfaces\\imatchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\interfaces\\imatchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\interfaces\\iavailabilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\interfaces\\iavailabilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\implements\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\implements\\userlikeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\implements\\userlikeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\implements\\matchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\implements\\matchservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\services\\implements\\availabilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:services\\implements\\availabilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:repositories\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\repositories\\interfaces\\igenericrepositoryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:repositories\\interfaces\\igenericrepositoryfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:repositories\\interfaces\\igenericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\repositories\\implements\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:repositories\\implements\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\repositories\\implements\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:repositories\\implements\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:middleware\\globalexceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\middleware\\errorexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:middleware\\errorexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\mappers\\mapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:mappers\\mapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\enums\\matchstatusenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:enums\\matchstatusenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\enums\\genderenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:enums\\genderenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\responses\\userres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\responses\\userres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\responses\\usermatchres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\responses\\usermatchres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\responses\\usermatchesres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\responses\\usermatchesres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\responses\\setuseravailabilityres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\responses\\setuseravailabilityres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\responses\\schedulematchres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\responses\\schedulematchres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\responses\\scheduleddateres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\responses\\scheduleddateres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\responses\\authenticationres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\responses\\authenticationres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\requests\\setuseravailabilityreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\requests\\setuseravailabilityreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\requests\\schedulematchreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\requests\\schedulematchreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\requests\\registerreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\requests\\registerreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\dtos\\requests\\loginreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:dtos\\requests\\loginreq.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\data\\models\\userlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:data\\models\\userlike.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\data\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:data\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\data\\models\\scheduleddate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:data\\models\\scheduleddate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\data\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:data\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\data\\models\\availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:data\\models\\availability.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:controllers\\matchcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:controllers\\basecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\controllers\\availabilitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:controllers\\availabilitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|e:\\mini_dating_app\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DFD37F50-3192-4C76-867F-9AAB308B1610}|Mini_Dating_App.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AvailabilityService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Implements\\AvailabilityService.cs",
+              "RelativeDocumentMoniker": "Services\\Implements\\AvailabilityService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Implements\\AvailabilityService.cs",
+              "RelativeToolTip": "Services\\Implements\\AvailabilityService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:56:07.186Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MatchService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Implements\\MatchService.cs",
+              "RelativeDocumentMoniker": "Services\\Implements\\MatchService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Implements\\MatchService.cs",
+              "RelativeToolTip": "Services\\Implements\\MatchService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:56:08.116Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "E:\\Mini_Dating_App\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-21T04:07:41.068Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "JwtService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\JwtService.cs",
+              "RelativeDocumentMoniker": "Services\\JwtService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\JwtService.cs",
+              "RelativeToolTip": "Services\\JwtService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwAgAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:09:59.987Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T10:10:57.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MiniDatingAppDbContext.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Data\\MiniDatingAppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\MiniDatingAppDbContext.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Data\\MiniDatingAppDbContext.cs",
+              "RelativeToolTip": "Data\\MiniDatingAppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T10:31:57.418Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Mini_Dating_App_BE.csproj",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj",
+              "RelativeDocumentMoniker": "Mini_Dating_App_BE.csproj",
+              "ToolTip": "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj",
+              "RelativeToolTip": "Mini_Dating_App_BE.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-22T09:35:36.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IJwtService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\IJwtService.cs",
+              "RelativeDocumentMoniker": "Services\\IJwtService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\IJwtService.cs",
+              "RelativeToolTip": "Services\\IJwtService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:54:15.912Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LikeUserController.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Controllers\\LikeUserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\LikeUserController.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Controllers\\LikeUserController.cs",
+              "RelativeToolTip": "Controllers\\LikeUserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T05:22:45.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\BaseService.cs",
+              "RelativeDocumentMoniker": "Services\\BaseService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\BaseService.cs",
+              "RelativeToolTip": "Services\\BaseService.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwAcAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T10:08:37.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:37:26.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserLikeService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Interfaces\\IUserLikeService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IUserLikeService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Interfaces\\IUserLikeService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IUserLikeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:07:48.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IMatchService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Interfaces\\IMatchService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IMatchService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Interfaces\\IMatchService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IMatchService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T12:18:07.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Implements\\UserService.cs",
+              "RelativeDocumentMoniker": "Services\\Implements\\UserService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Implements\\UserService.cs",
+              "RelativeToolTip": "Services\\Implements\\UserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T11:37:35.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserLikeService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Implements\\UserLikeService.cs",
+              "RelativeDocumentMoniker": "Services\\Implements\\UserLikeService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Implements\\UserLikeService.cs",
+              "RelativeToolTip": "Services\\Implements\\UserLikeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:08:53.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Repositories\\Interfaces\\IUnitOfWork.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T12:16:32.829Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IAvailabilityService.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Services\\Interfaces\\IAvailabilityService.cs",
+              "RelativeDocumentMoniker": "Services\\Interfaces\\IAvailabilityService.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Services\\Interfaces\\IAvailabilityService.cs",
+              "RelativeToolTip": "Services\\Interfaces\\IAvailabilityService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:55:57.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IGenericRepository.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGenericRepository.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Repositories\\Interfaces\\IGenericRepository.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IGenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:17:22.497Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Repositories\\Implements\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implements\\UnitOfWork.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Repositories\\Implements\\UnitOfWork.cs",
+              "RelativeToolTip": "Repositories\\Implements\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:27:10.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Repositories\\Implements\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\Implements\\GenericRepository.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Repositories\\Implements\\GenericRepository.cs",
+              "RelativeToolTip": "Repositories\\Implements\\GenericRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:22:23.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IGenericRepositoryFactory.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Repositories\\Interfaces\\IGenericRepositoryFactory.cs",
+              "RelativeDocumentMoniker": "Repositories\\Interfaces\\IGenericRepositoryFactory.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Repositories\\Interfaces\\IGenericRepositoryFactory.cs",
+              "RelativeToolTip": "Repositories\\Interfaces\\IGenericRepositoryFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:16:47.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "GlobalExceptionMiddleware.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Middleware\\GlobalExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "Middleware\\GlobalExceptionMiddleware.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Middleware\\GlobalExceptionMiddleware.cs",
+              "RelativeToolTip": "Middleware\\GlobalExceptionMiddleware.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T14:28:19.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ErrorException.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Middleware\\ErrorException.cs",
+              "RelativeDocumentMoniker": "Middleware\\ErrorException.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Middleware\\ErrorException.cs",
+              "RelativeToolTip": "Middleware\\ErrorException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T14:40:57.07Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Mapper.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Mappers\\Mapper.cs",
+              "RelativeDocumentMoniker": "Mappers\\Mapper.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Mappers\\Mapper.cs",
+              "RelativeToolTip": "Mappers\\Mapper.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAQwAcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:46:56.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MatchStatusEnum.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Enums\\MatchStatusEnum.cs",
+              "RelativeDocumentMoniker": "Enums\\MatchStatusEnum.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Enums\\MatchStatusEnum.cs",
+              "RelativeToolTip": "Enums\\MatchStatusEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T05:38:52.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GenderEnum.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Enums\\GenderEnum.cs",
+              "RelativeDocumentMoniker": "Enums\\GenderEnum.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Enums\\GenderEnum.cs",
+              "RelativeToolTip": "Enums\\GenderEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T05:38:33.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UserRes.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Responses\\UserRes.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\UserRes.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Responses\\UserRes.cs",
+              "RelativeToolTip": "DTOs\\Responses\\UserRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T12:42:54.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "UserMatchRes.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Responses\\UserMatchRes.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\UserMatchRes.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Responses\\UserMatchRes.cs",
+              "RelativeToolTip": "DTOs\\Responses\\UserMatchRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T07:02:48.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "UserMatchesRes.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Responses\\UserMatchesRes.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\UserMatchesRes.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Responses\\UserMatchesRes.cs",
+              "RelativeToolTip": "DTOs\\Responses\\UserMatchesRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T07:52:34.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SetUserAvailabilityRes.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Responses\\SetUserAvailabilityRes.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\SetUserAvailabilityRes.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Responses\\SetUserAvailabilityRes.cs",
+              "RelativeToolTip": "DTOs\\Responses\\SetUserAvailabilityRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:57:31.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ScheduleMatchRes.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Responses\\ScheduleMatchRes.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\ScheduleMatchRes.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Responses\\ScheduleMatchRes.cs",
+              "RelativeToolTip": "DTOs\\Responses\\ScheduleMatchRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T09:44:21.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ScheduledDateRes.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Responses\\ScheduledDateRes.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\ScheduledDateRes.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Responses\\ScheduledDateRes.cs",
+              "RelativeToolTip": "DTOs\\Responses\\ScheduledDateRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T08:40:32.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "AuthenticationRes.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Responses\\AuthenticationRes.cs",
+              "RelativeDocumentMoniker": "DTOs\\Responses\\AuthenticationRes.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Responses\\AuthenticationRes.cs",
+              "RelativeToolTip": "DTOs\\Responses\\AuthenticationRes.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:30:25.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "SetUserAvailabilityReq.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Requests\\SetUserAvailabilityReq.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\SetUserAvailabilityReq.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Requests\\SetUserAvailabilityReq.cs",
+              "RelativeToolTip": "DTOs\\Requests\\SetUserAvailabilityReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:12:47.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ScheduleMatchReq.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Requests\\ScheduleMatchReq.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\ScheduleMatchReq.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Requests\\ScheduleMatchReq.cs",
+              "RelativeToolTip": "DTOs\\Requests\\ScheduleMatchReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T07:08:41.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "RegisterReq.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Requests\\RegisterReq.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\RegisterReq.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Requests\\RegisterReq.cs",
+              "RelativeToolTip": "DTOs\\Requests\\RegisterReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T13:17:22.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "LoginReq.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\DTOs\\Requests\\LoginReq.cs",
+              "RelativeDocumentMoniker": "DTOs\\Requests\\LoginReq.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\DTOs\\Requests\\LoginReq.cs",
+              "RelativeToolTip": "DTOs\\Requests\\LoginReq.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T13:54:55.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "UserLike.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Data\\Models\\UserLike.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\UserLike.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Data\\Models\\UserLike.cs",
+              "RelativeToolTip": "Data\\Models\\UserLike.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T09:53:24.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Data\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\User.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Data\\Models\\User.cs",
+              "RelativeToolTip": "Data\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T10:58:47.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ScheduledDate.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Data\\Models\\ScheduledDate.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\ScheduledDate.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Data\\Models\\ScheduledDate.cs",
+              "RelativeToolTip": "Data\\Models\\ScheduledDate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T08:38:04.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Match.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Data\\Models\\Match.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Match.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Data\\Models\\Match.cs",
+              "RelativeToolTip": "Data\\Models\\Match.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T09:53:37.501Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Availability.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Data\\Models\\Availability.cs",
+              "RelativeDocumentMoniker": "Data\\Models\\Availability.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Data\\Models\\Availability.cs",
+              "RelativeToolTip": "Data\\Models\\Availability.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T09:53:56.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T10:09:57.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "MatchController.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Controllers\\MatchController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MatchController.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Controllers\\MatchController.cs",
+              "RelativeToolTip": "Controllers\\MatchController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T10:26:07.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "BaseController.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Controllers\\BaseController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BaseController.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Controllers\\BaseController.cs",
+              "RelativeToolTip": "Controllers\\BaseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-20T10:09:21.785Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "AvailabilityController.cs",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Controllers\\AvailabilityController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AvailabilityController.cs",
+              "ToolTip": "E:\\Mini_Dating_App\\Controllers\\AvailabilityController.cs",
+              "RelativeToolTip": "Controllers\\AvailabilityController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:53:18.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\Mini_Dating_App\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "E:\\Mini_Dating_App\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-22T09:35:58.573Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
