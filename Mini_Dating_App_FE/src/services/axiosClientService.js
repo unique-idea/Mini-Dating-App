@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-// const URL = import.meta.env.VITE_API_BASE_URL;
+const URL = import.meta.env.VITE_API_BASE_URL;
 //For some problem with dockerfile it can read the evn, and not have enough time
 //for fix, so i force to using this
-const URL = "http://localhost:5016/api/v1";
+// const URL = "http://localhost:5016/api/v1";
 
 
 const axiosClient = axios.create({
