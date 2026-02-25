@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jpwlfW+BsC8=",
+  "dgSpecHash": "Ozz/YKrUVRg=",
   "success": true,
-  "projectFilePath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj",
+  "projectFilePath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\Mini_Dating_App_BE.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
@@ -59,9 +59,9 @@
       "code": "NU1510",
       "level": "Warning",
       "message": "PackageReference Microsoft.AspNetCore.SignalR will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
-      "projectPath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj",
+      "projectPath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\Mini_Dating_App_BE.csproj",
       "warningLevel": 1,
-      "filePath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj",
+      "filePath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\Mini_Dating_App_BE.csproj",
       "libraryId": "Microsoft.AspNetCore.SignalR",
       "targetGraphs": [
         "net10.0"

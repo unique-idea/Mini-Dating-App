@@ -2,13 +2,14 @@
 {
     public enum MatchStatusEnum
     {
-        //Have a match but not accepted to date yet => Scheduling (User accepted match and setting Availability if not setting)
+        //Have a match but both users not accepted to date yet 
+        Matched,
+        //One user accepted match but waiting for other user to accepted 
         Pending,
-        //Accepted match but waiting for free slot to schedule or waiting for other user to accepted => Scheduled
-        Scheduling,
+        //Both user accepted but no have free slot wait for one of user reset avaibalitity and rechedule again
+        NoSlotFound,
         //When both Users are accepted and have free slot
         Scheduled,
-        //Accepted but reject free slot wait for another free slot
-        Rescheduled
+  
     }
 }

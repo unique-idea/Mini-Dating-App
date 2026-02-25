@@ -17,8 +17,8 @@ namespace Mini_Dating_App_BE.Controllers
         [HttpPost("like/{likedId}")]
         public async Task<IActionResult> LikeUserProfile([FromRoute] Guid likedId)
         {
-            await _userLikeService.LikeUserProfile(likedId);
-            return Ok();
+            var response = await _userLikeService.LikeUserProfile(likedId);
+            return Ok(response);
         }
     }
 }

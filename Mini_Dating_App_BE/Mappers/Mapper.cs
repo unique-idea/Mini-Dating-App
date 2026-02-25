@@ -16,7 +16,7 @@ namespace Mini_Dating_App_BE.Mappers
               .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.Age))
               .ForMember(dest => dest.Gender, opt => opt.MapFrom(src => src.Gender))
               .ForMember(dest => dest.Bio, opt => opt.MapFrom(src => src.Bio))
-              .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email));
+              .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email.ToLower()));
 
 
             CreateMap<RegisterReq, User>()

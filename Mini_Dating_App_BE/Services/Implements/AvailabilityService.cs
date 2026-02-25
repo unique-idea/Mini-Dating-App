@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.SignalR;
 using Mini_Dating_App_BE.Data;
 using Mini_Dating_App_BE.Data.Models;
 using Mini_Dating_App_BE.DTOs.Requests;
 using Mini_Dating_App_BE.DTOs.Responses;
+using Mini_Dating_App_BE.Hubs;
 using Mini_Dating_App_BE.Repositories.Interfaces;
 using Mini_Dating_App_BE.Services.Interfaces;
 
@@ -10,9 +12,8 @@ namespace Mini_Dating_App_BE.Services.Implements
 {
     public class AvailabilityService : BaseService<AvailabilityService>, IAvailabilityService
     {
-        public AvailabilityService(IUnitOfWork<MiniDatingAppDbContext> unitOfWork, ILogger<AvailabilityService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public AvailabilityService(IHubContext<SystemHub> hubContext, IUnitOfWork<MiniDatingAppDbContext> unitOfWork, ILogger<AvailabilityService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(hubContext, unitOfWork, logger, mapper, httpContextAccessor)
         {
-
         }
 
         public async Task<List<SetUserAvailabilityRes>> GetAvailabilities()
@@ -52,14 +53,26 @@ namespace Mini_Dating_App_BE.Services.Implements
 
         private void ValidateAvailability(List<SetUserAvailabilityReq> requests)
         {
-            if (requests == null || !requests.Any() || requests.Count() > 21) throw new BadHttpRequestException("Invalid availability list");
-            if (requests.Min(x => x.Date).Date < DateTime.UtcNow.Date) throw new BadHttpRequestException("Availability date cannot be in the past");
-            if (requests.Max(x => x.Date).Date > DateTime.UtcNow.Date.AddDays(21)) throw new BadHttpRequestException("Availability date cannot be exceed more than 3 weeks");
-            if (requests.GroupBy(r => r.Date.Date).Any(g => g.Count() > 1)) throw new BadHttpRequestException("Duplicate availability date is not allowed");
+            if (requests == null || !requests.Any() || requests.Count > 21 ||
+                requests.Any(x => x == null || x.Date == default || x.StartTime == default || x.EndTime == default))
+                throw new BadHttpRequestException("Invalid or empty availability list");
 
-            if (requests.Any(r => r.StartTime < TimeSpan.Zero || r.StartTime > TimeSpan.FromHours(24)
-               || r.EndTime < TimeSpan.Zero || r.EndTime > TimeSpan.FromHours(24) || r.StartTime >= r.EndTime))
-                throw new BadHttpRequestException("Invalid availability time");
+            var tomorrow = DateTime.UtcNow.Date.AddDays(1);
+            if (requests.Any(x => x.Date.Date < tomorrow)) throw new BadHttpRequestException("Availability must be at least 1 day in the future.");
+
+            if (requests.Any(x => x.Date.Date > DateTime.UtcNow.Date.AddDays(21))) throw new BadHttpRequestException("Availability cannot exceed 3 weeks from today.");
+
+            if (requests.GroupBy(r => r.Date.Date).Any(g => g.Count() > 1)) throw new BadHttpRequestException("Duplicate availability dates are not allowed.");
+
+            var maxTime = TimeSpan.FromDays(1);
+
+            if (requests.Any(r =>
+                r.StartTime < TimeSpan.Zero || r.StartTime >= maxTime ||
+                r.EndTime <= TimeSpan.Zero || r.EndTime > maxTime ||
+                r.StartTime >= r.EndTime))
+            {
+                throw new BadHttpRequestException("Invalid availability time slot. Times must be between 00:00 and 24:00, and Start must be before End.");
+            }
         }
     }
 }

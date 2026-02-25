@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj": {}
+    "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\Mini_Dating_App_BE.csproj": {}
   },
   "projects": {
-    "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj": {
+    "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\Mini_Dating_App_BE.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj",
+        "projectUniqueName": "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\Mini_Dating_App_BE.csproj",
         "projectName": "Mini_Dating_App_BE",
-        "projectPath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE.csproj",
+        "projectPath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\Mini_Dating_App_BE.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "E:\\Mini_Dating_App\\obj\\",
+        "outputPath": "E:\\Mini_Dating_App\\Mini_Dating_App_BE\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

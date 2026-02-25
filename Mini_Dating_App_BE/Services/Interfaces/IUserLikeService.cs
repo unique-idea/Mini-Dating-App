@@ -4,6 +4,6 @@ namespace Mini_Dating_App_BE.Services.Interfaces
 {
     public interface IUserLikeService
     {
-        Task LikeUserProfile(Guid likedId);
+        Task<bool> LikeUserProfile(Guid likedId);
     }
 }

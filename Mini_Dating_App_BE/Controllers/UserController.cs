@@ -13,6 +13,14 @@ namespace Mini_Dating_App_BE.Controllers
         {
             _userService = userService;
         }
+        [HttpPost("ResetAll")]
+        public async Task<IActionResult> Reset([FromBody] int number)
+        {
+
+            await _userService.Reset(number);
+            return Ok();
+
+        }
 
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginReq request)
@@ -36,7 +44,6 @@ namespace Mini_Dating_App_BE.Controllers
         [HttpGet("profiles")]
         public async Task<IActionResult> GetUserProfiles()
         {
-            var user = HttpContext.User;
             var responses = await _userService.GetUserProfiles();
             return Ok(responses);
         }

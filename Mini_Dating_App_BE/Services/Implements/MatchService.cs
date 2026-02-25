@@ -6,14 +6,17 @@ using Mini_Dating_App_BE.DTOs.Responses;
 using Mini_Dating_App_BE.Repositories.Interfaces;
 using Mini_Dating_App_BE.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.SignalR;
+using Mini_Dating_App_BE.Hubs;
 
 namespace Mini_Dating_App_BE.Services.Implements
 {
     public class MatchService : BaseService<MatchService>, IMatchService
     {
-        public MatchService(IUnitOfWork<MiniDatingAppDbContext> unitOfWork, ILogger<MatchService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(unitOfWork, logger, mapper, httpContextAccessor)
+        public MatchService(IHubContext<SystemHub> hubContext, IUnitOfWork<MiniDatingAppDbContext> unitOfWork, ILogger<MatchService> logger, IMapper mapper, IHttpContextAccessor httpContextAccessor) : base(hubContext, unitOfWork, logger, mapper, httpContextAccessor)
         {
         }
+
 
         #region GetMatches
         public async Task<UserMatchesRes> GetUserMatches()
@@ -26,11 +29,7 @@ namespace Mini_Dating_App_BE.Services.Implements
 
             var hasAvailability = await HasAvailability(currentUserId);
 
-            return new UserMatchesRes
-            {
-                Matches = matchesResponse,
-                HasAvailability = hasAvailability
-            };
+            return new UserMatchesRes { Matches = matchesResponse, HasAvailability = hasAvailability };
         }
 
 
@@ -58,15 +57,17 @@ namespace Mini_Dating_App_BE.Services.Implements
 
             return matches.Select(m =>
             {
-                var matchedUserId = m.UserAId == currentUserId
-                    ? m.UserBId
-                    : m.UserAId;
+                var (matchedUserId, matchedUserConfrimed) = (m.UserAId == currentUserId)
+                ? (m.UserBId, m.UserBConfirmed)
+                : (m.UserAId, m.UserAConfirmed);
 
                 var response = _mapper.Map<UserMatchRes>(m);
 
                 if (matchedUserDict.TryGetValue(matchedUserId, out var user)) response.User = _mapper.Map<UserRes>(user);
 
                 if (m.ScheduledDate != null) response.ScheduledDate = _mapper.Map<ScheduledDateRes>(m.ScheduledDate);
+
+                response.UserMatchedConfirmed = matchedUserConfrimed;
 
                 return response;
 
@@ -91,27 +92,34 @@ namespace Mini_Dating_App_BE.Services.Implements
 
                 match.Status = scheduled
                     ? MatchStatusEnum.Scheduled
-                    : MatchStatusEnum.Rescheduled;
+                    : MatchStatusEnum.NoSlotFound;
             }
             else
             {
-                match.Status = MatchStatusEnum.Scheduling;
+                match.Status = MatchStatusEnum.Pending;
             }
 
-            await SaveMatch(match);
+            await UpdateMatchAndNotifyUser(match);
 
             return MapResponse(match);
         }
 
         private async Task<Match> GetValidMatch(Guid matchId, Guid currentUserId)
         {
-            var match = await _unitOfWork.GetRepository<Match>().SingleOrDefaultAsync(predicate: x => x.MatchId == matchId);
+            var match = await _unitOfWork.GetRepository<Match>().SingleOrDefaultAsync(
+                predicate: x => x.MatchId == matchId, include: x => x.Include(x => x.UserA).Include(x => x.UserB)!.Include(x => x.ScheduledDate)!);
 
             if (match == null) throw new KeyNotFoundException("Match not found");
 
             if (match.UserAId != currentUserId && match.UserBId != currentUserId) throw new BadHttpRequestException("You are not part of this match");
 
-            if (match.ScheduledDate != null) throw new BadHttpRequestException("Match already scheduled");
+            var userMatched = match.UserAId == currentUserId ? match.UserB : match.UserA;
+
+            if (match.Status == MatchStatusEnum.Pending && (match.UserAId == currentUserId ? match.UserAConfirmed : match.UserBConfirmed))
+                throw new BadHttpRequestException("Date with " + userMatched!.Name + " still now try on scheduling please patient");
+
+            if (match.Status == MatchStatusEnum.Scheduled)
+                throw new BadHttpRequestException("Date with " + userMatched!.Name + " already scheduled at " + match.ScheduledDate!.Date.Day);
 
             return match;
         }
@@ -139,77 +147,99 @@ namespace Mini_Dating_App_BE.Services.Implements
 
             var repo = _unitOfWork.GetRepository<Availability>();
 
-            var currentUserAvailabilities = (await repo.GetListAsync(predicate: x => x.UserId == currentUserId)).ToList();
-            var otherUserAvailabilities = (await repo.GetListAsync(predicate: x => x.UserId == otherUserId)).ToList();
+            var currentUserAvailabilities = (await repo.GetListAsync(predicate: x => x.UserId == currentUserId)).OrderBy(x => x.Date.Date).ToList();
+            var otherUserAvailabilities = (await repo.GetListAsync(predicate: x => x.UserId == otherUserId)).OrderBy(x => x.Date.Date).ToList();
 
-            if (!currentUserAvailabilities.Any() || !otherUserAvailabilities.Any()) return false;
+            if (!IsDateRangeOverLapping(currentUserAvailabilities, otherUserAvailabilities)) return false;
 
-            var minDateA = currentUserAvailabilities.Min(x => x.Date);
-            var maxDateA = currentUserAvailabilities.Max(x => x.Date);
-
-            var minDateB = otherUserAvailabilities.Min(x => x.Date);
-            var maxDateB = otherUserAvailabilities.Max(x => x.Date);
-
-            if (!IsDateRangeOverlapping(minDateA, maxDateA, minDateB, maxDateB)) return false;
-
-            return await TryMatchTimeSlot(match, currentUserAvailabilities, otherUserAvailabilities, currentUserId);
+            return await TryMatchTimeSlot(match, currentUserAvailabilities, otherUserAvailabilities, currentUserId, otherUserId);
         }
 
-        private async Task<bool> TryMatchTimeSlot(Match match, List<Availability> current, List<Availability> other, Guid currentUserId)
+        private bool IsDateRangeOverLapping(List<Availability> currents, List<Availability> others)
         {
-            var existingScheduledMatches = await _unitOfWork.GetRepository<Match>()
+            if (!currents.Any() || !others.Any()) return false;
+
+            var minDateA = currents.Min(x => x.Date);
+            var maxDateA = currents.Max(x => x.Date);
+
+            var minDateB = others.Min(x => x.Date);
+            var maxDateB = others.Max(x => x.Date);
+
+            return minDateA <= maxDateB && minDateB <= maxDateA;
+        }
+        private async Task<bool> TryMatchTimeSlot(Match match, List<Availability> curAva, List<Availability> othAva, Guid currentUserId, Guid otherUserId)
+        {
+            var curBookedMatches = await _unitOfWork.GetRepository<Match>()
                 .GetListAsync(predicate: x => (x.UserAId == currentUserId || x.UserBId == currentUserId)
-                 && x.MatchId != match.MatchId
-                 && x.ScheduledDate != null);
+                && x.MatchId != match.MatchId
+                && x.Status == MatchStatusEnum.Scheduled,
+                include: x => x.Include(x => x.ScheduledDate)!);
 
-            var scheduledByDate = existingScheduledMatches
-                .GroupBy(x => x.ScheduledDate!.Date.Date)
-                .ToDictionary(g => g.Key, g => g.ToList());
+            var othBookedMathches = await _unitOfWork.GetRepository<Match>()
+                .GetListAsync(predicate: x => (x.UserAId == otherUserId || x.UserBId == otherUserId)
+                && x.MatchId != match.MatchId
+                && x.Status == MatchStatusEnum.Scheduled,
+                include: x => x.Include(x => x.ScheduledDate)!);
 
-            var otherByDate = other
-                .GroupBy(x => x.Date.Date)
-               .ToDictionary(g => g.Key, g => g.ToList());
+            var othAvaByDate = othAva
+               .GroupBy(x => x.Date.Date)
+               .ToDictionary(g => g.Key, g => g.First());
 
-            foreach (var c in current)
+            foreach (var c in curAva)
             {
-                if (!otherByDate.TryGetValue(c.Date.Date, out var sameDays)) continue;
+                if (!othAvaByDate.TryGetValue(c.Date.Date, out var othAvaSameDay)) continue;
 
-                foreach (var sameDay in sameDays)
-                {
-                    if (scheduledByDate.TryGetValue(c.Date.Date, out var scheduledMatches)) continue;
+                var potentialStartTime = c.StartTime > othAvaSameDay.StartTime ? c.StartTime : othAvaSameDay.StartTime;
+                var potentialEndTime = c.EndTime < othAvaSameDay.EndTime ? c.EndTime : othAvaSameDay.EndTime;
 
-                    if (!IsSlotRangeOverlapping(c, sameDay)) continue;
+                if (potentialStartTime >= potentialEndTime || (potentialEndTime - potentialStartTime).TotalMinutes < 30) continue;
 
-                    match.ScheduledDate = CreateScheduledDate(c, sameDay);
-                    return true;
-                }
+                var hasConflict = curBookedMatches.Any(x => x.ScheduledDate!.Date.Date == c.Date.Date && x.ScheduledDate.StartTime < potentialEndTime &&
+                                  x.ScheduledDate.EndTime > potentialStartTime) || othBookedMathches.Any(x => x.ScheduledDate!.Date.Date == c.Date.Date &&
+                                  x.ScheduledDate.StartTime < potentialEndTime && x.ScheduledDate.EndTime > potentialStartTime);
+
+                if (hasConflict) continue;
+
+                match.ScheduledDate = new ScheduledDate { Date = c.Date.Date, StartTime = potentialStartTime, EndTime = potentialEndTime };
+
+                return true;
             }
+
 
             return false;
         }
 
-        private bool IsDateRangeOverlapping(DateTime minA, DateTime maxA, DateTime minB, DateTime maxB)
-        {
-            return minA <= maxB && minB <= maxA;
-        }
-
-        private bool IsSlotRangeOverlapping(Availability a, Availability b)
-        {
-            return a.StartTime < b.EndTime && b.StartTime < a.EndTime;
-        }
-        private ScheduledDate CreateScheduledDate(Availability a, Availability b)
-        {
-            return new ScheduledDate
-            {
-                Date = a.Date.Date,
-                StartTime = a.StartTime > b.StartTime ? a.StartTime : b.StartTime,
-                EndTime = a.EndTime < b.EndTime ? a.EndTime : b.EndTime
-            };
-        }
-        private async Task SaveMatch(Match match)
+        private async Task UpdateMatchAndNotifyUser(Match match)
         {
             _unitOfWork.GetRepository<Match>().Update(match);
             await _unitOfWork.CommitAsync();
+
+
+            await NotifyUser(match.UserAId, "matchupdated", new
+            {
+                matchId = match.MatchId,
+                status = match.Status.ToString(),
+                scheduledDate = match.ScheduledDate == null ? null : new
+                {
+                    date = match.ScheduledDate.Date,
+                    startTime = match.ScheduledDate.StartTime,
+                    endTime = match.ScheduledDate.EndTime
+                },
+                userMatchedConfirmed = match.UserBConfirmed
+            });
+
+            await NotifyUser(match.UserBId, "matchupdated", new
+            {
+                matchId = match.MatchId,
+                status = match.Status.ToString(),
+                scheduledDate = match.ScheduledDate == null ? null : new
+                {
+                    date = match.ScheduledDate.Date,
+                    startTime = match.ScheduledDate.StartTime,
+                    endTime = match.ScheduledDate.EndTime
+                },
+                userMatchedConfirmed = match.UserAConfirmed
+            });
         }
 
         private ScheduleMatchRes MapResponse(Match match)

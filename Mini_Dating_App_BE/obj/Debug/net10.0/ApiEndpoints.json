@@ -1,6 +1,6 @@
 [
   {
-    "ContainingType": "Mini_Dating_App.Controllers.AvailabilityController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.AvailabilityController",
     "Method": "GetAvailabilities",
     "RelativePath": "api/v1/Availability",
     "HttpMethod": "GET",
@@ -10,7 +10,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mini_Dating_App.Controllers.AvailabilityController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.AvailabilityController",
     "Method": "SettingAvailability",
     "RelativePath": "api/v1/Availability/setting",
     "HttpMethod": "POST",
@@ -19,14 +19,14 @@
     "Parameters": [
       {
         "Name": "requests",
-        "Type": "System.Collections.Generic.List\u00601[[Mini_Dating_App.DTOs.Requests.SetUserAvailabilityReq, Mini_Dating_App, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.List\u00601[[Mini_Dating_App_BE.DTOs.Requests.SetUserAvailabilityReq, Mini_Dating_App_BE, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mini_Dating_App.Controllers.LikeUserController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.LikeUserController",
     "Method": "LikeUserProfile",
     "RelativePath": "api/v1/LikeUser/like/{likedId}",
     "HttpMethod": "POST",
@@ -42,7 +42,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mini_Dating_App.Controllers.MatchController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.MatchController",
     "Method": "GetUserMatches",
     "RelativePath": "api/v1/Match",
     "HttpMethod": "GET",
@@ -52,7 +52,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mini_Dating_App.Controllers.MatchController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.MatchController",
     "Method": "ScheduleMatch",
     "RelativePath": "api/v1/Match/schedule/{matchId}",
     "HttpMethod": "POST",
@@ -68,7 +68,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mini_Dating_App.Controllers.UserController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.UserController",
     "Method": "Login",
     "RelativePath": "api/v1/User/login",
     "HttpMethod": "POST",
@@ -77,14 +77,14 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Mini_Dating_App.DTOs.Requests.LoginReq",
+        "Type": "Mini_Dating_App_BE.DTOs.Requests.LoginReq",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mini_Dating_App.Controllers.UserController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.UserController",
     "Method": "GetUserProfiles",
     "RelativePath": "api/v1/User/profiles",
     "HttpMethod": "GET",
@@ -94,7 +94,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Mini_Dating_App.Controllers.UserController",
+    "ContainingType": "Mini_Dating_App_BE.Controllers.UserController",
     "Method": "Register",
     "RelativePath": "api/v1/User/register",
     "HttpMethod": "POST",
@@ -103,7 +103,23 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "Mini_Dating_App.DTOs.Requests.RegisterReq",
+        "Type": "Mini_Dating_App_BE.DTOs.Requests.RegisterReq",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Mini_Dating_App_BE.Controllers.UserController",
+    "Method": "Reset",
+    "RelativePath": "api/v1/User/ResetAll",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "number",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

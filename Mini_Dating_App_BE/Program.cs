@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using Mini_Dating_App_BE.Data;
+using Mini_Dating_App_BE.Hubs;
 using Mini_Dating_App_BE.Middleware;
 using Mini_Dating_App_BE.Repositories.Implements;
 using Mini_Dating_App_BE.Repositories.Interfaces;
@@ -31,14 +32,23 @@ builder.Services.AddScoped<IUserLikeService, UserLikeService>();
 builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
 builder.Services.AddScoped<IMatchService, MatchService>();
 
+builder.Services.AddSignalR(options =>
+{
+    options.EnableDetailedErrors = true;
+}).AddJsonProtocol(options =>
+{
+    options.PayloadSerializerOptions.PropertyNamingPolicy = null;
+});
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5016")
+            policy.WithOrigins("http://localhost:5016", "http://localhost:5173")
                   .AllowAnyHeader()
-                  .AllowAnyMethod();
+                  .AllowAnyMethod()
+                  .AllowCredentials();
         });
 });
 
@@ -109,6 +119,8 @@ app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapHub<SystemHub>("/hubs");
 
 app.MapControllers();
 

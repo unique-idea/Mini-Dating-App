@@ -17,7 +17,7 @@ namespace Mini_Dating_App_BE.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.3");
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.Availability", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.Availability", b =>
                 {
                     b.Property<Guid>("AvailabilityId")
                         .ValueGeneratedOnAdd()
@@ -42,7 +42,7 @@ namespace Mini_Dating_App_BE.Migrations
                     b.ToTable("Availability", (string)null);
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.Match", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.Match", b =>
                 {
                     b.Property<Guid>("MatchId")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace Mini_Dating_App_BE.Migrations
                     b.ToTable("Match", (string)null);
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.ScheduledDate", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.ScheduledDate", b =>
                 {
                     b.Property<Guid>("MatchId")
                         .HasColumnType("TEXT");
@@ -92,7 +92,7 @@ namespace Mini_Dating_App_BE.Migrations
                     b.ToTable("ScheduledDate", (string)null);
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.User", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.User", b =>
                 {
                     b.Property<Guid>("UserId")
                         .ValueGeneratedOnAdd()
@@ -107,7 +107,8 @@ namespace Mini_Dating_App_BE.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .UseCollation("NOCASE");
 
                     b.Property<string>("Gender")
                         .IsRequired()
@@ -119,10 +120,13 @@ namespace Mini_Dating_App_BE.Migrations
 
                     b.HasKey("UserId");
 
+                    b.HasIndex("Email")
+                        .IsUnique();
+
                     b.ToTable("User", (string)null);
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.UserLike", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.UserLike", b =>
                 {
                     b.Property<Guid>("UserLikeId")
                         .ValueGeneratedOnAdd()
@@ -143,9 +147,9 @@ namespace Mini_Dating_App_BE.Migrations
                     b.ToTable("UserLike", (string)null);
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.Availability", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.Availability", b =>
                 {
-                    b.HasOne("Mini_Dating_App.Data.Models.User", "User")
+                    b.HasOne("Mini_Dating_App_BE.Data.Models.User", "User")
                         .WithMany("Availabilities")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -154,41 +158,45 @@ namespace Mini_Dating_App_BE.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.Match", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.Match", b =>
                 {
-                    b.HasOne("Mini_Dating_App.Data.Models.User", null)
+                    b.HasOne("Mini_Dating_App_BE.Data.Models.User", "UserA")
                         .WithMany()
                         .HasForeignKey("UserAId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Mini_Dating_App.Data.Models.User", null)
+                    b.HasOne("Mini_Dating_App_BE.Data.Models.User", "UserB")
                         .WithMany()
                         .HasForeignKey("UserBId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+
+                    b.Navigation("UserA");
+
+                    b.Navigation("UserB");
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.ScheduledDate", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.ScheduledDate", b =>
                 {
-                    b.HasOne("Mini_Dating_App.Data.Models.Match", "Match")
+                    b.HasOne("Mini_Dating_App_BE.Data.Models.Match", "Match")
                         .WithOne("ScheduledDate")
-                        .HasForeignKey("Mini_Dating_App.Data.Models.ScheduledDate", "MatchId")
+                        .HasForeignKey("Mini_Dating_App_BE.Data.Models.ScheduledDate", "MatchId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Match");
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.UserLike", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.UserLike", b =>
                 {
-                    b.HasOne("Mini_Dating_App.Data.Models.User", "Liked")
+                    b.HasOne("Mini_Dating_App_BE.Data.Models.User", "Liked")
                         .WithMany("LikesReceived")
                         .HasForeignKey("LikedId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Mini_Dating_App.Data.Models.User", "Liker")
+                    b.HasOne("Mini_Dating_App_BE.Data.Models.User", "Liker")
                         .WithMany("LikesGiven")
                         .HasForeignKey("LikerId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -199,12 +207,12 @@ namespace Mini_Dating_App_BE.Migrations
                     b.Navigation("Liker");
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.Match", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.Match", b =>
                 {
                     b.Navigation("ScheduledDate");
                 });
 
-            modelBuilder.Entity("Mini_Dating_App.Data.Models.User", b =>
+            modelBuilder.Entity("Mini_Dating_App_BE.Data.Models.User", b =>
                 {
                     b.Navigation("Availabilities");
 

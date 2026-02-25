@@ -17,8 +17,6 @@ namespace Mini_Dating_App_BE.DTOs.Requests
 
         [Required]
         public GenderEnum? Gender { get; set; }
-
-        [Required]
         public string Bio { get; set; } = string.Empty;
 
         [Required]

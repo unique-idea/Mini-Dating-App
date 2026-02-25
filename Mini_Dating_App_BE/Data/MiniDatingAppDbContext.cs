@@ -22,6 +22,14 @@ namespace Mini_Dating_App_BE.Data
                 entity.ToTable("User");
                 entity.HasKey(e => e.UserId);
 
+                modelBuilder.Entity<User>()
+               .HasIndex(u => u.Email)
+               .IsUnique();
+
+                modelBuilder.Entity<User>()
+                .Property(u => u.Email)
+                .UseCollation("NOCASE");
+
                 entity.HasMany(e => e.LikesGiven)
                     .WithOne(l => l.Liker)
                     .HasForeignKey(l => l.LikerId)
@@ -74,12 +82,12 @@ namespace Mini_Dating_App_BE.Data
                 entity.Property(e => e.Status)
                       .HasConversion<string>();
 
-                entity.HasOne<User>()
+                entity.HasOne(m => m.UserA)
                       .WithMany()
                       .HasForeignKey(m => m.UserAId)
                       .OnDelete(DeleteBehavior.Restrict);
 
-                entity.HasOne<User>()
+                entity.HasOne(m => m.UserB)
                       .WithMany()
                       .HasForeignKey(m => m.UserBId)
                       .OnDelete(DeleteBehavior.Restrict);

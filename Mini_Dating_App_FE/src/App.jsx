@@ -1,34 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from 'react-router-dom'
+import MainPage from './pages/MainPage'
+import ProfilesPage from './pages/ProfilesPage'
+import MatchesPage from './pages/MatchesPage'
+import Navbar from './components/Navbar'
+import { useEffect } from 'react'
+import { startConnection, joinUserGroup } from './services/signalRService'
 
-function App() {
-  const [count, setCount] = useState(0)
+function ProtectedRoute({ children }) {
+  const token = localStorage.getItem('token')
+  if (!token) return <Navigate to="/" replace />
+
+
+  return children
+}
+
+function AppRoutes() {
+  const location = useLocation()
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="/profiles" element={
+        <ProtectedRoute><ProfilesPage key={location.key} /></ProtectedRoute>
+      } />
+      {/* <Route path="/likes" element={
+        <ProtectedRoute><LikesPage /></ProtectedRoute>
+      } /> */}
+      <Route path="/matches" element={
+        <ProtectedRoute><MatchesPage key={location.key} /></ProtectedRoute>
+      } />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  )
+}
+
+function App() {
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}')
+
+    if (token && currentUser.userId) {
+      startConnection().then(() => joinUserGroup(currentUser.userId))
+    }
+  }, [])
+
+  return (
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   )
 }
 
