@@ -119,11 +119,11 @@ app.UseMiddleware<GlobalExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
     app.UseHttpsRedirection();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
