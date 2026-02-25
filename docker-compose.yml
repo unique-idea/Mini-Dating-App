@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  be:
+    build:
+      context: ./Mini_Dating_App_BE
+    ports:
+      - "5016:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - Jwt__Key=This_Is_Mini_Dating_App_Super_Key_2026
+      - Jwt__Issuer=MiniDatingApp
+      - Jwt__Audience=UniqueIdea
+      - Jwt__DurationInMinutes=60
+      - AllowedOrigins=http://localhost:3000
+
+  fe:
+    build:
+      context: ./Mini_Dating_App_FE
+      args:
+        - VITE_API_BASE_URL=http://localhost:5016/api/v1
+    ports:
+      - "3000:80"
+    depends_on:
+      - be

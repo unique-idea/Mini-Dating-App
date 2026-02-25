@@ -1,7 +1,9 @@
 import * as signalR from '@microsoft/signalr'
 
-const URL = import.meta.env.VITE_API_BASE_URL?.replace('/api/v1', '')
-
+// const URL = import.meta.env.VITE_API_BASE_URL?.replace('/api/v1', '')
+//For some problem with dockerfile it can read the evn, and not have enough time
+//for fix, so i force to using this
+const URL = "http://localhost:5016";
 let connection = null
 
 const buildConnection = () => {

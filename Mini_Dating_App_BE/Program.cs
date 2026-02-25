@@ -15,6 +15,7 @@ using System.Text;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
 const string scheme = "Bearer";
 
 builder.Services.AddControllers();
@@ -22,6 +23,8 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddDbContext<MiniDatingAppDbContext>(options =>
     options.UseSqlite("Data Source=datingapp.db"));
+
+
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddScoped<IUnitOfWork<MiniDatingAppDbContext>, UnitOfWork<MiniDatingAppDbContext>>();
@@ -45,10 +48,10 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend",
         policy =>
         {
-            policy.WithOrigins("http://localhost:5016", "http://localhost:5173")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod()
-                  .AllowCredentials();
+            policy.WithOrigins(builder.Configuration["AllowedOrigin"] ?? "*")
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
         });
 });
 
@@ -106,15 +109,20 @@ builder.Logging.AddDebug();
 
 var app = builder.Build();
 
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<MiniDatingAppDbContext>();
+    db.Database.Migrate();
+}
+
 app.UseMiddleware<GlobalExceptionMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseHttpsRedirection();
 }
-
-app.UseHttpsRedirection();
 
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
