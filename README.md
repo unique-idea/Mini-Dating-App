@@ -3,7 +3,7 @@
 A Web-App simulator a mobile-first dating application built with **React + Vite** (Frontend) and **.NET 10** (Backend), featuring real-time match notifications via SignalR, availability-based date scheduling, and a clean phone-frame UI.
 
 **Live Demo:**
-- Frontend: [https://minidating-7kvxdtupp-unique-idea1s-projects.vercel.app](https://minidating-7kvxdtupp-unique-idea1s-projects.vercel.app)
+- Frontend: [https://minidating-7kvxdtupp-unique-idea1s-projects.vercel.app?_vercel_share=aKTzLZjoCE9dEy46fuMn0qoQkwucrm75](https://minidating-7kvxdtupp-unique-idea1s-projects.vercel.app?_vercel_share=aKTzLZjoCE9dEy46fuMn0qoQkwucrm75)
 - Backend API: [https://mini-dating-app-axvl.onrender.com/swagger/index.html](https://mini-dating-app-axvl.onrender.com/swagger/index.html)
 - Video Demo (Local + Happy Case): 
 ---
