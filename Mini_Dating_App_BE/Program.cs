@@ -1,4 +1,3 @@
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
@@ -13,23 +12,16 @@ using Mini_Dating_App_BE.Services.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 
-
 var builder = WebApplication.CreateBuilder(args);
-
 const string scheme = "Bearer";
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddDbContext<MiniDatingAppDbContext>(options =>
     options.UseSqlite("Data Source=datingapp.db"));
-
-
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-
 builder.Services.AddScoped<IUnitOfWork<MiniDatingAppDbContext>, UnitOfWork<MiniDatingAppDbContext>>();
 builder.Services.AddScoped<IJwtService, JwtService>();
-
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserLikeService, UserLikeService>();
 builder.Services.AddScoped<IAvailabilityService, AvailabilityService>();
@@ -45,14 +37,18 @@ builder.Services.AddSignalR(options =>
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend",
-        policy =>
-        {
-            policy.WithOrigins(builder.Configuration["AllowedOrigin"] ?? "*")
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        var origins = (builder.Configuration["AllowedOrigins"] ?? "http://localhost:3000")
+            .Split(',', StringSplitOptions.RemoveEmptyEntries)
+            .Select(o => o.Trim())
+            .ToArray();
+
+        policy.WithOrigins(origins)
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
-        });
+    });
 });
 
 builder.Services.AddSwaggerGen(options =>
@@ -83,29 +79,26 @@ builder.Services.AddAuthentication(options =>
     options.DefaultAuthenticateScheme = scheme;
     options.DefaultChallengeScheme = scheme;
 })
-    .AddJwtBearer(scheme, options =>
+.AddJwtBearer(scheme, options =>
+{
+    options.MapInboundClaims = false;
+    options.TokenValidationParameters = new TokenValidationParameters
     {
-        options.MapInboundClaims = false;
-        options.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateIssuerSigningKey = true,
-            ValidateLifetime = true,
-
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
-        };
-    });
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateIssuerSigningKey = true,
+        ValidateLifetime = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
+    };
+});
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddAuthorization();
 builder.Logging.AddConsole();
 builder.Logging.AddDebug();
-
-
 
 var app = builder.Build();
 
@@ -127,9 +120,6 @@ app.UseSwaggerUI();
 app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapHub<SystemHub>("/hubs");
-
 app.MapControllers();
-
 app.Run();
