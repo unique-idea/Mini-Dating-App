@@ -6,31 +6,32 @@ import { stopConnection } from '../services/signalRService'
 function Topbar({ onAvailabilitySet }) {
   const [showAvailability, setShowAvailability] = useState(false)
   const navigate = useNavigate()
+  const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}')
 
   const handleClose = () => {
     setShowAvailability(false)
-    if (onAvailabilitySet) onAvailabilitySet() 
+    if (onAvailabilitySet) onAvailabilitySet()
   }
 
   const handleLogout = () => {
     stopConnection()
     localStorage.removeItem('token')
-    localStorage.removeItem('user') 
+    localStorage.removeItem('user')
     navigate('/')
   }
-  
+
   return (
     <>
-    <div style={{ 
-      display: 'flex', 
-      justifyContent: 'space-between', // Pushes logout to left, calendar to right
-      alignItems: 'center', 
-      padding: '10px 16px',
-      width: '100%',
-      boxSizing: 'border-box'
-    }}>
-  {/* Logout button left */}
-  <button
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '10px 16px',
+        width: '100%',
+        boxSizing: 'border-box'
+      }}>
+        {/* Logout Button Left */}
+        <button
           onClick={handleLogout}
           style={{
             border: 'none',
@@ -44,9 +45,17 @@ function Topbar({ onAvailabilitySet }) {
           }}
           title="Logout"
         >
-           ↩
+          ↩
         </button>
 
+        {/* User Name Center */}
+        <div style={{ textAlign: 'center' }}>
+          <div style={{ fontSize: '13px', fontWeight: 700, color: '#333' }}>
+            {currentUser.name || 'User'}
+          </div>
+        </div>
+
+        {/* Availability Button Right */}
         <button
           onClick={() => setShowAvailability(true)}
           style={{
@@ -61,14 +70,14 @@ function Topbar({ onAvailabilitySet }) {
             boxShadow: '0 2px 8px rgba(224,36,94,0.3)'
           }}
         >
-          📅 
+          📅
         </button>
-      
-      {/* Overlay */}
-      {showAvailability && (
-        <AvailabilityOverlay onClose={handleClose} />
-      )}
-</div>
+
+        {/* Overlay */}
+        {showAvailability && (
+          <AvailabilityOverlay onClose={handleClose} />
+        )}
+      </div>
     </>
   )
 }

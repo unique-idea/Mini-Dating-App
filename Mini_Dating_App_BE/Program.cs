@@ -106,6 +106,7 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<MiniDatingAppDbContext>();
     db.Database.Migrate();
+    DataSeeder.Seed(db);
 }
 
 app.UseMiddleware<GlobalExceptionMiddleware>();

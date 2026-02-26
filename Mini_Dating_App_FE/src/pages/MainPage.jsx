@@ -19,7 +19,6 @@ function MainPage() {
     setError('')
     setLoading(true)
     try {
-      console.log("API URL is:", import.meta.env.VITE_API_BASE_URL);
       const res = await axiosClient.post('/User/login', { email: loginForm.email })
       localStorage.setItem('token', res.data.token)
       localStorage.setItem('currentUser', JSON.stringify(res.data.user))
@@ -128,7 +127,7 @@ function MainPage() {
                 <input
                   type="email"
                   className="form-control"
-                  placeholder="user01@example.com"
+                  placeholder="Enter your Email!"
                   value={loginForm.email}
                   onChange={e => setLoginForm({ email: e.target.value })}
                   required

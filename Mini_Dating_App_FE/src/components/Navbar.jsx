@@ -1,20 +1,18 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 
 const tabs = [
-  { path: '/profiles',     icon: '👥', label: 'Profiles'  },
-  { path: '/matches',      icon: '💘', label: 'Matches'   },
+  { path: '/profiles', icon: '👥', label: 'Profiles' },
+  { path: '/matches', icon: '💘', label: 'Matches' },
 ]
 
-function Navbar() {
+function Navbar({ hasMatchUpdate }) {
   const navigate = useNavigate()
   const location = useLocation()
 
   return (
     <div style={{
       position: 'absolute',
-      bottom: 0,
-      left: 0,
-      right: 0,
+      bottom: 0, left: 0, right: 0,
       height: '65px',
       backgroundColor: 'white',
       borderTop: '1px solid #eee',
@@ -42,7 +40,8 @@ function Navbar() {
               color: isActive ? '#e0245e' : '#aaa',
               borderTop: isActive ? '2px solid #e0245e' : '2px solid transparent',
               filter: isActive ? 'drop-shadow(0 0 4px rgba(224,36,94,0.6))' : 'none',
-              transition: 'all 0.25s ease'
+              transition: 'all 0.25s ease',
+              position: 'relative'
             }}
           >
             <span style={{ fontSize: '20px' }}>{tab.icon}</span>
@@ -54,6 +53,32 @@ function Navbar() {
             }}>
               {tab.label}
             </span>
+
+            {/* Pulsing dot for match updates */}
+            {tab.path === '/matches' && hasMatchUpdate && (
+              <div style={{
+                position: 'absolute',
+                top: '8px',
+                right: '22px',
+              }}>
+                {/* outer ping ring */}
+                <div style={{
+                  position: 'absolute',
+                  width: '12px',
+                  height: '12px',
+                  borderRadius: '50%',
+                  background: 'rgba(224,36,94,0.4)',
+                  animation: 'ping 1s ease-out infinite'
+                }} />
+                {/* inner solid dot */}
+                <div style={{
+                  width: '12px',
+                  height: '12px',
+                  borderRadius: '50%',
+                  background: '#e0245e',
+                }} />
+              </div>
+            )}
           </button>
         )
       })}

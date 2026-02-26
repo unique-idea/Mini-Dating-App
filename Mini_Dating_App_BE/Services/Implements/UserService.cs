@@ -71,27 +71,6 @@ namespace Mini_Dating_App_BE.Services.Implements
 
             return users.Select(u => _mapper.Map<UserRes>(u)).ToList();
         }
-
-        public async Task Reset(int number)
-        {
-            var users = await _unitOfWork.GetRepository<User>().GetListAsync();
-            var likes = await _unitOfWork.GetRepository<UserLike>().GetListAsync();
-            var matches = await _unitOfWork.GetRepository<Match>().GetListAsync();
-            var availabilities = await _unitOfWork.GetRepository<Availability>().GetListAsync();
-
-            if (number == 1) _unitOfWork.GetRepository<Match>().DeleteRange(matches);
-            if (number == 2) _unitOfWork.GetRepository<UserLike>().DeleteRange(likes);
-            if (number == 3) _unitOfWork.GetRepository<Availability>().DeleteRange(availabilities);
-            if (number == 4) _unitOfWork.GetRepository<User>().DeleteRange(users);
-
-
-
-
-
-
-            await _unitOfWork.CommitAsync();
-
-        }
     }
 }
 

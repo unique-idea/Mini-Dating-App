@@ -3,8 +3,8 @@ import MainPage from './pages/MainPage'
 import ProfilesPage from './pages/ProfilesPage'
 import MatchesPage from './pages/MatchesPage'
 import Navbar from './components/Navbar'
-import { useEffect } from 'react'
-import { startConnection, joinUserGroup } from './services/signalRService'
+import { useEffect, useState } from 'react'
+import { startConnection, joinUserGroup, onMatchCreated, onMatchUpdated } from './services/signalRService' 
 
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem('token')
@@ -14,8 +14,15 @@ function ProtectedRoute({ children }) {
   return children
 }
 
-function AppRoutes() {
+function AppRoutes({hasMatchUpdate, setHasMatchUpdate}) {
   const location = useLocation()
+
+  useEffect(() => {
+    if (location.pathname === '/matches') {
+      setHasMatchUpdate(false)
+    }
+  }, [location.pathname])
+
 
   return (
     <Routes>
@@ -35,6 +42,8 @@ function AppRoutes() {
 }
 
 function App() {
+  const [hasMatchUpdate, setHasMatchUpdate] = useState(false)
+
   useEffect(() => {
     const token = localStorage.getItem('token')
     const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}')
@@ -42,11 +51,26 @@ function App() {
     if (token && currentUser.userId) {
       startConnection().then(() => joinUserGroup(currentUser.userId))
     }
+
+    onMatchCreated(() => {
+      if (window.location.pathname !== '/matches') {
+        setHasMatchUpdate(true)
+      }
+    })
+
+    onMatchUpdated(() => {
+      if (window.location.pathname !== '/matches') {
+        setHasMatchUpdate(true)
+      }
+    })
+
   }, [])
+
+  
 
   return (
     <BrowserRouter>
-      <AppRoutes />
+      <AppRoutes hasMatchUpdate={hasMatchUpdate} setHasMatchUpdate={setHasMatchUpdate} />
     </BrowserRouter>
   )
 }

@@ -2,7 +2,7 @@ import Navbar from './Navbar'
 import Topbar from './Topbar'
 
 
-function PhoneLayout({ children, onAvailabilitySet }) {
+function PhoneLayout({ children, onAvailabilitySet, hasMatchUpdate }) {
   return (
     <div style={{
       minHeight: '100vh',
@@ -24,7 +24,7 @@ function PhoneLayout({ children, onAvailabilitySet }) {
         flexDirection: 'column',
         position: 'relative'
       }}>
-        
+
         {/* Top navbar */}
         <Topbar onAvailabilitySet={onAvailabilitySet} />
 
@@ -34,7 +34,7 @@ function PhoneLayout({ children, onAvailabilitySet }) {
         </div>
 
         {/* Bottom navbar */}
-        <Navbar />
+        <Navbar hasMatchUpdate={hasMatchUpdate} />
       </div>
     </div>
   )
